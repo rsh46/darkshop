@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Shopping Website</title>
+<style>
+    /* CSS styles */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 200px; /* Adjust width as needed */
+        background-color: #f0f0f0;
+        padding: 20px;
+        overflow-y: scroll;
+    }
+    .content {
+        margin-left: 220px; /* Adjust margin to account for sidebar width */
+        padding: 20px;
+    }
+    .logo {
+        /* Add your logo styles here */
+    }
+    .button {
+        /* Add button styles here */
+        display: block;
+        margin-bottom: 10px;
+    }
+    .product-box {
+        /* Add product box styles here */
+        width: 200px;
+        height: 200px;
+        border: 1px solid #ccc;
+        margin: 10px;
+        float: left;
+    }
+    /* Add more styles as needed */
+</style>
+</head>
+<body>
+<div class="sidebar">
+    <div class="logo">
+        <!-- Add your logo here -->
+    </div>
+    <a href="#about" class="button">About</a>
+    <a href="#sections" class="button">Sections</a>
+    <a href="#random" class="button">Random</a>
+    <a href="#wishlist" class="button">Wishlist</a>
+    <!-- Add blank spaces for other options -->
+    <a href="#faq" class="button">FAQ</a>
+    <a href="#feedback" class="button">Feedback</a>
+</div>
+<div class="content">
+    <h1>Name of Your Service</h1>
+    <p>Trademark</p>
+    <h2>Welcome to Your Shopping Website</h2>
+    <!-- Add introductory text and buttons here -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search by name, nationality, or purpose" readonly>
+        <button>Search</button>
+        <button>Filter</button>
+        <button>About Products</button>
+    </div>
+    <div class="product-container">
+        <!-- Product boxes will be dynamically added here -->
+    </div>
+    <p>Beware</p>
+</div>
+<script>
+    // JavaScript code for adding product boxes dynamically
+    const productContainer = document.querySelector('.product-container');
+
+    // Function to add product box
+    function addProductBox(imageUrl, productName) {
+        const productBox = document.createElement('div');
+        productBox.classList.add('product-box');
+        productBox.innerHTML = `
+            <img src="${imageUrl}" alt="${productName}">
+            <p>${productName}</p>
+        `;
+        productContainer.appendChild(productBox);
+    }
+
+    // Example usage:
+    // addProductBox('path/to/image.jpg', 'Product Name');
+</script>
+</body>
+</html>
